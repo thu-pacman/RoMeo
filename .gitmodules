@@ -1,0 +1,12 @@
+[submodule "third_party/fast-hadamard-transform"]
+	path = third_party/fast-hadamard-transform
+	url = https://github.com/Dao-AILab/fast-hadamard-transform.git
+[submodule "third_party/QuaRot"]
+	path = third_party/QuaRot
+	url = https://github.com/spcl/QuaRot.git
+[submodule "third_party/cutlass"]
+	path = third_party/cutlass
+	url = https://github.com/NVIDIA/cutlass.git
+[submodule "third_party/applied-ai"]
+	path = third_party/applied-ai
+	url = https://github.com/meta-pytorch/applied-ai.git
