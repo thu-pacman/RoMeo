@@ -1,0 +1,13 @@
+diff --git a/include/cute/container/array_subbyte.hpp b/include/cute/container/array_subbyte.hpp
+index 38da7ace..ee6a8e5d 100644
+--- a/include/cute/container/array_subbyte.hpp
++++ b/include/cute/container/array_subbyte.hpp
+@@ -333,7 +333,7 @@ template <class T>
+ CUTE_HOST_DEVICE constexpr
+ T*
+ raw_pointer_cast(subbyte_iterator<T> const& x) {
+-  assert(x.idx_ == 0);
++  // assert(x.idx_ == 0);
+   return reinterpret_cast<T*>(x.ptr_);
+ }
+ 

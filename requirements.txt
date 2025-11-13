@@ -5,3 +5,4 @@ matplotlib
 scipy
 lm_eval
 wheel
+numpy

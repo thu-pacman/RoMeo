@@ -1,0 +1,19 @@
+diff --git a/setup.py b/setup.py
+index b41fc6b..9f4c46f 100644
+--- a/setup.py
++++ b/setup.py
+@@ -104,10 +104,12 @@ if not SKIP_CUDA_BUILD:
+                 "Note: make sure nvcc has a supported version by running nvcc -V."
+             )
+ 
+-    cc_flag.append("-gencode")
+-    cc_flag.append("arch=compute_70,code=sm_70")
++    # cc_flag.append("-gencode")
++    # cc_flag.append("arch=compute_70,code=sm_70")
+     cc_flag.append("-gencode")
+     cc_flag.append("arch=compute_80,code=sm_80")
++    cc_flag.append("-gencode")
++    cc_flag.append("arch=compute_89,code=sm_89")
+     if bare_metal_version >= Version("11.8"):
+         cc_flag.append("-gencode")
+         cc_flag.append("arch=compute_90,code=sm_90")
