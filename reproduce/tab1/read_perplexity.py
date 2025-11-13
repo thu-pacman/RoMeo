@@ -27,13 +27,13 @@ def analyze_perplexity_results(file_paths):
     method_ppl_map = {}
     for file_path in file_paths:
         results = extract_task_perplexity_line_by_line(file_path)
-        model_name = file_path.split('_')[1]
+        model_name = file_path.split('_')[1][:-4]
         for method, ppl in results:
             if method not in method_ppl_map:
                 method_ppl_map[method] = {}
             method_ppl_map[method][model_name] = ppl
     
-    model_names = [file_path.split('_')[1] for file_path in file_paths]
+    model_names = [file_path.split('_')[1][:-4] for file_path in file_paths]
     
     print('Method\t\t' + '\t'.join(model_names))
     print('-' * 100)

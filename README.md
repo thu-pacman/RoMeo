@@ -11,7 +11,14 @@ Download this repository and its submodules:
 
 ```bash
 git clone --recursive https://github.com/zqh-wz/RoMeo-AE.git
-git submodule update --init --recursive
+cd RoMeo-AE/
+```
+
+Download val.jsonl for SmoothQuant:
+
+```bash
+wget https://hf-mirror.com/datasets/mit-han-lab/pile-val-backup/resolve/main/val.jsonl.zst
+zstd -d --rm val.jsonl.zst
 ```
 
 ### C2. Installation
