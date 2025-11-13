@@ -21,6 +21,26 @@ wget https://hf-mirror.com/datasets/mit-han-lab/pile-val-backup/resolve/main/val
 zstd -d --rm val.jsonl.zst
 ```
 
+Then, apply nessesary patches to submodules.
+
+```bash
+cd third_party/omniserve
+git apply ../patches/omniserve.patch
+cd ../../
+
+cd third_party/cutlass
+git apply ../patches/cutlass.patch
+cd ../../
+
+cd third_party/fast-hadamard-transform
+git apply ../patches/fast-hadamard-transform.patch
+cd ../../
+
+cd third_party/QuaRot
+git apply ../patches/QuaRot.patch
+cd ../../
+```
+
 ### C2. Installation
 
 We manage python virtual environments with `uv`.
