@@ -1,4 +1,0 @@
-qfactory
-qfactory/jit
-qfactory/kernels
-qfactory/linears

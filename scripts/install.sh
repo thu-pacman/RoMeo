@@ -18,6 +18,3 @@ cd ../../../../../../
 cd third_party/QuaRot/
 uv pip install . --no-build-isolation
 cd ../../
-
-# Install qfactory
-uv pip install . --no-build-isolation

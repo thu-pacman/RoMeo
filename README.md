@@ -46,9 +46,3 @@ source ./scripts/reproduce.sh tab1
 ```bash
 source ./scripts/reproduce.sh tab2
 ```
-
-#### Figure 7: Normalized layer-level latency on Qwen3 models of different input batch sizes.
-
-```bash
-source ./scripts/reproduce.sh fig7
-```
