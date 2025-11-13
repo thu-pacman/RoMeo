@@ -55,7 +55,7 @@ def analyze_accuracy_results(file_path):
     
     for i, task_type in enumerate(task_order):
         if i == 0:
-            print(f"{file_id}", end='')
+            print(f"{file_id[:-4]}", end='')
         else:
             print(f"\t", end='')
         if task_type in results:
@@ -89,21 +89,21 @@ def main():
     
     datasets = ['ARC-C', 'ARC-E', 'LAMBADA', 'PIQA', 'WG', 'Average']
     
-    print('=' * 80)
-    print("Comparison of zero-shot accuracy on five downstream tasks. The higher is better.")
-    print('=' * 80)
+    print('=' * 100)
+    print("Table2. Comparison of zero-shot accuracy on five downstream tasks. The higher is better.")
+    print('=' * 100)
     
     header = "Model\t\tMethod"
     for dataset in datasets:
         header += f"\t{dataset}"
     print(header)
-    print('-' * 80)
+    print('-' * 100)
     
     for file_path in file_paths:
         analyze_accuracy_results(file_path.strip())
         print()
     
-    print('=' * 80)
+    print('=' * 100)
 
 if __name__ == "__main__":
     main()
