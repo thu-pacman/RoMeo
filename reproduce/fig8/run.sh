@@ -1,6 +1,6 @@
 source ../../scripts/activate_env.sh ../../.venv_qfactory
 
-rm -rf ./*.log
+rm -rf ./*.json
 export HF_ENDPOINT=https://hf-mirror.com
 export NO_USE_FASTER_HADAMARD_TRANSFORM=1
 

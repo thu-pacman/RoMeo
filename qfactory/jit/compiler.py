@@ -145,6 +145,7 @@ class JITCompiler:
         include_dirs = [
             f'{os.path.dirname(os.path.abspath(__file__))}/../include',
             f'{os.path.dirname(os.path.abspath(__file__))}/../include/third_party/cutlass/include',
+            f'{os.path.dirname(os.path.abspath(__file__))}/../../third_party/cutlass/include',
         ]
 
         signature = f'{code}$${get_qfactory_version()}$${get_nvcc_compiler()}$${flags}$${include_dirs}$${arch}'
