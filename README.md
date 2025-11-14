@@ -1,5 +1,21 @@
 # RoMeo-AE
-Artifact for PPoPP'26 "RoMeo: Mitigating Dual-dimensional Outliers with Rotated Mixed Precision Quantization"
+
+## A. Abstract
+
+This repository contains the code for the reproduction of the paper "RoMeo: Mitigating Dual-dimensional Outliers with Rotated Mixed Precision Quantization" at PPoPP'26.
+
+The reproduction includes Table 1, 2 and Figure 7, 8, 9, 10 of the paper.
+
+## B. Prepare Hardware Environment
+
+To reproduce this work, a GPU server with NVIDIA 4090 and H100 GPUs is required.
+
+**For AE Reviewers, please check the HotCRP website for instructions on how to access the provided GPU servers.**
+
+Due to our limited resources, we provide a server with NVIDIA 4090 and A100 GPUs.
+
+To avoid issues of environment, we strongly recommend reviewers to use our provided environment.
+
 
 ## C. Prepare Software Environment
 
