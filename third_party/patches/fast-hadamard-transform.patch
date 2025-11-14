@@ -6,10 +6,12 @@ index b41fc6b..9f4c46f 100644
                  "Note: make sure nvcc has a supported version by running nvcc -V."
              )
  
--    cc_flag.append("-gencode")
--    cc_flag.append("arch=compute_70,code=sm_70")
-+    # cc_flag.append("-gencode")
-+    # cc_flag.append("arch=compute_70,code=sm_70")
+-    if bare_metal_version <= Version("12.9"):
+-        cc_flag.append("-gencode")
+-        cc_flag.append("arch=compute_70,code=sm_70")
++    # if bare_metal_version <= Version("12.9"):
++    #     cc_flag.append("-gencode")
++    #     cc_flag.append("arch=compute_70,code=sm_70")
      cc_flag.append("-gencode")
      cc_flag.append("arch=compute_80,code=sm_80")
 +    cc_flag.append("-gencode")
