@@ -7,7 +7,7 @@ task=perplexity model=Qwen3-8B srun --gres=gpu:H100:1 -p Long bash ./run_acc_all
 task=perplexity model=Llama-3.1-8B srun --gres=gpu:H100:1 -p Long bash ./run_acc_allbench.sh
 model=/home/dataset/Qwen3-8B bash ./run_acc_scale.sh
 model=/home/dataset/Llama-3.1-8B bash ./run_acc_scale.sh
-
+python3 ./plot_ppl_scale.py
 
 cd ../../
 deactivate
