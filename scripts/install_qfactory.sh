@@ -18,3 +18,11 @@ cd ../../../../../../
 cd third_party/QuaRot/
 uv pip install . --no-build-isolation
 cd ../../
+
+# Install Qfactory
+uv pip install . --no-build-isolation
+
+# Install omniserve
+cd third_party/omniserve
+uv pip install .
+cd ../../

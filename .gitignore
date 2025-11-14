@@ -1,3 +1,6 @@
 *.log
 __pycache__/
 *.jsonl
+*.egg-info*
+*.pdf
+build/

@@ -1,4 +1,4 @@
-logfilename="bench_e2e_quarot_$(date +%Y%m%d_%H%M%S).log"
+logfilename="bench_e2e_quarot.log"
 
 batch_list=(16 64 256)
 

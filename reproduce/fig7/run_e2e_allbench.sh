@@ -7,7 +7,7 @@ if [ -z "$seqlen" ]; then
 fi
 
 model_name=$(basename "$model")
-logfilename="bench_e2e_${model_name}_$(date +%Y%m%d_%H%M%S).log"
+logfilename="bench_e2e_${model_name}.log"
 
 batch_list=(16 64 256)
 
@@ -23,7 +23,7 @@ for baseline_flag in "${baseline_flags[@]}"; do
         echo "Running benchmark with batch=$batch, baseline_flag=$baseline_flag" | tee -a "$logfilename"
         echo "============================================" | tee -a "$logfilename"
         
-        python3 benchmark/bench_module.py \
+        python3 ../../bench_module.py \
             --model "$model" \
             --nbatch "$batch" \
             --seqlen "$seqlen" \

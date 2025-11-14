@@ -51,6 +51,12 @@ source ./scripts/activate_env.sh .venv
 source ./scripts/install.sh
 
 deactivate
+
+bash ./scripts/create_env.sh .venv_qfactory
+source ./scripts/activate_env.sh .venv_qfactory
+source ./scripts/install_qfactory.sh
+
+deactivate
 ```
 
 ## D. Reproduce Experimental Results
@@ -65,4 +71,28 @@ source ./scripts/reproduce.sh tab1
 
 ```bash
 source ./scripts/reproduce.sh tab2
+```
+
+#### Figure 7: Normalized layer-level latency on Qwen3 models of different input batch sizes.
+
+```bash
+source ./scripts/reproduce.sh fig7
+```
+
+#### Figure 8: Normalized kernel performance on various matrix shapes.
+
+```bash
+source ./scripts/reproduce.sh fig8
+```
+
+#### Figure 9. Layer-level latency breakdown for Qwen3-8B across different batch sizes with progressive optimizations.
+
+```bash
+source ./scripts/reproduce.sh fig9
+```
+
+#### Figure 10. Scaling the percentage of outliers.
+
+```bash
+source ./scripts/reproduce.sh fig10
 ```
