@@ -32,9 +32,7 @@ KERNEL_DICT = {
     'BF16': 'baseline_half',
     'Torch': 'baseline_torch',
     'Quarot': 'baseline_quarot',
-    # 'BitWeaver': 'gemm_int4_int4_nt_mixed_precision_separate',
     'RoMeo': 'baseline_mixed_precision_multistream',
-    # 'BitWeaver': 'baseline_mixed_precision_unifiedkernel'
 }
 
 BAR_COLOR = [

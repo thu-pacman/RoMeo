@@ -2,7 +2,7 @@
 
 # Check if the argument is provided
 if [ "$#" -ne 1 ]; then
-    echo "Usage: $0 'fig6'"
+    echo "Usage: $0 'tab1'"
     exit 1
 fi
 

@@ -7,4 +7,4 @@ if [ "$#" -ne 1 ]; then
 fi
 
 # Prepare the environment
-uv venv $1 --python 3.12 --clear
+uv venv $1 --python 3.12

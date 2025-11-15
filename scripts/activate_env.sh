@@ -9,5 +9,4 @@ fi
 # Prepare the environment
 source $1/bin/activate
 source /home/spack/spack/share/spack/setup-env.sh
-spack load cuda@12.4
-spack load cmake
+spack load cuda@12.8

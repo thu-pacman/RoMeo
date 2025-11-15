@@ -1,4 +1,4 @@
-source ../../scripts/activate_env.sh ../../.venv_qfactory
+source ../../scripts/activate_env.sh ../../.venv
 
 rm -rf ./*.log
 export HF_ENDPOINT=https://hf-mirror.com
