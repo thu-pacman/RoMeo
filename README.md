@@ -86,6 +86,8 @@ Result summary will be generated at `reproduce/tab2/zero_shot_summary.log`.
 
 #### Figure 7: Normalized layer-level latency on Qwen3 models of different input batch sizes.
 
+Estimated runtime: ~25 minutes.
+
 ```bash
 bash ./scripts/reproduce.sh fig7 | tee fig7.log
 ```
@@ -94,6 +96,8 @@ Result figure will be generated at `reproduce/fig7/layer_latency.pdf`.
 
 #### Figure 8: Normalized kernel performance on various matrix shapes.
 
+Estimated runtime: ~25 minutes.
+
 ```bash
 bash ./scripts/reproduce.sh fig8 | tee fig8.log
 ```
@@ -101,6 +105,8 @@ bash ./scripts/reproduce.sh fig8 | tee fig8.log
 Result figure will be generated at `reproduce/fig8/bench_kernels_results.pdf`.
 
 #### Figure 9. Layer-level latency breakdown for Qwen3-8B across different batch sizes with progressive optimizations.
+
+Estimated runtime: ~5 minutes.
 
 ```bash
 bash ./scripts/reproduce.sh fig9 | tee fig9.log
