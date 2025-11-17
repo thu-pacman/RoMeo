@@ -1,6 +1,10 @@
+if [ -f bench_kernels_results.pdf ]; then
+    echo "bench_kernels_results.pdf exists"
+    exit 0
+fi
+
 source ../../scripts/activate_env.sh ../../.venv
 
-rm -rf ./*.json
 export HF_ENDPOINT=https://hf-mirror.com
 export NO_USE_FASTER_HADAMARD_TRANSFORM=1
 

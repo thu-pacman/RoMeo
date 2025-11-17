@@ -1,6 +1,10 @@
+if [ -f percent-ppl.pdf ]; then
+    echo "percent-ppl.pdf exists"
+    exit 0
+fi
+
 source ../../scripts/activate_env.sh ../../.venv
 
-rm -rf ./*.log
 export HF_ENDPOINT=https://hf-mirror.com
 export NO_USE_FASTER_HADAMARD_TRANSFORM=1
 task=perplexity model=Qwen3-8B srun --gres=gpu:H100:1 -p Long bash ./run_acc_allbench.sh

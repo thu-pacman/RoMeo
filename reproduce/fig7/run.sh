@@ -1,6 +1,11 @@
+if [ -f layer_latency.pdf ]; then
+    echo "layer_latency.pdf exists"
+    exit 0
+fi
+
 source ../../scripts/activate_env.sh ../../.venv
 spack load cuda@12.8
-rm -rf ./*.log
+
 export HF_ENDPOINT=https://hf-mirror.com
 export NO_USE_FASTER_HADAMARD_TRANSFORM=1
 export QFACTORY_LOG_LEVEL=ERROR

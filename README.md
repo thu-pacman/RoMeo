@@ -4,7 +4,7 @@
 
 This repository contains the code for the reproduction of the paper "RoMeo: Mitigating Dual-dimensional Outliers with Rotated Mixed Precision Quantization" at PPoPP'26.
 
-The reproduction includes Table 1, 2 and Figure 7, 8, 9, 10 of the paper.
+The reproduction includes Tables 1 and 2 and Figures 7, 8, 9, and 10 from the submitted version of the paper.
 
 ## B. Prepare Hardware Environment
 
@@ -12,9 +12,7 @@ To reproduce this work, a GPU server with NVIDIA 4090 and H100 GPUs is required.
 
 **For AE Reviewers, please check the HotCRP website for instructions on how to access the provided GPU servers.**
 
-Due to our limited resources, we provide a server with NVIDIA 4090 and A100 GPUs.
-
-To avoid issues of environment, we strongly recommend reviewers to use our provided environment.
+To avoid issues of environment and network, we strongly recommend reviewers to use our provided environment.
 
 
 ## C. Prepare Software Environment
@@ -30,7 +28,7 @@ git clone --recursive https://github.com/zqh-wz/RoMeo-AE.git
 cd RoMeo-AE/
 ```
 
-Download val.jsonl for SmoothQuant:
+Download calibration dataset for SmoothQuant:
 
 ```bash
 wget https://hf-mirror.com/datasets/mit-han-lab/pile-val-backup/resolve/main/val.jsonl.zst
@@ -72,11 +70,19 @@ deactivate
 bash ./scripts/reproduce.sh tab1
 ```
 
+Result summary will be generated at `reproduce/tab1/perplexity_summary.log`.
+
 #### Table 2: Comparison of zero-shot accuracy on four downstream tasks.
 
 ```bash
 bash ./scripts/reproduce.sh tab2
 ```
+
+Result summary will be generated at `reproduce/tab2/zero_shot_summary.log`.
+
+> Note: Due to the long runtime of full zero-shot evaluation, this script only runs partial evaluation (partial models and benchmarks) for quick verification.
+> 
+> To run the full evaluation, simply modify `reproduce/tab2/run.sh` and `reproduce/tab2/run_acc_allbench.sh`.
 
 #### Figure 7: Normalized layer-level latency on Qwen3 models of different input batch sizes.
 
@@ -84,11 +90,15 @@ bash ./scripts/reproduce.sh tab2
 bash ./scripts/reproduce.sh fig7
 ```
 
+Result figure will be generated at `reproduce/fig7/layer_latency.pdf`.
+
 #### Figure 8: Normalized kernel performance on various matrix shapes.
 
 ```bash
 bash ./scripts/reproduce.sh fig8
 ```
+
+Result figure will be generated at `reproduce/fig8/bench_kernels_results.pdf`.
 
 #### Figure 9. Layer-level latency breakdown for Qwen3-8B across different batch sizes with progressive optimizations.
 
@@ -96,8 +106,12 @@ bash ./scripts/reproduce.sh fig8
 bash ./scripts/reproduce.sh fig9
 ```
 
+Result figure will be generated at `reproduce/fig9/plot_breakdown.pdf`.
+
 #### Figure 10. Scaling the percentage of outliers.
 
 ```bash
 bash ./scripts/reproduce.sh fig10
 ```
+
+Result figure will be generated at `reproduce/fig10/percent-ppl.pdf`.
