@@ -22,7 +22,7 @@ for model in "${models[@]}"; do
     fi
 done
 
-python3 ./read_zero_shot.py --file_path zero-shot_Qwen3-8B.log,zero-shot_Qwen3-14B.log,zero-shot_Qwen3-32B.log,zero-shot_Llama-3.1-8B.log,zero-shot_Llama-3.1-70B.log | tee zero_shot_summary.log
+python3 ./read_zero_shot.py --file_path zero-shot_Qwen3-8B.log,zero-shot_Llama-3.1-8B.log | tee zero_shot_summary.log
 
 
 cd ../../

@@ -67,7 +67,7 @@ deactivate
 #### Table 1: Comparison of measured perplexity on WikiText2 dataset.
 
 ```bash
-bash ./scripts/reproduce.sh tab1
+bash ./scripts/reproduce.sh tab1 | tee tab1.log
 ```
 
 Result summary will be generated at `reproduce/tab1/perplexity_summary.log`.
@@ -75,7 +75,7 @@ Result summary will be generated at `reproduce/tab1/perplexity_summary.log`.
 #### Table 2: Comparison of zero-shot accuracy on four downstream tasks.
 
 ```bash
-bash ./scripts/reproduce.sh tab2
+bash ./scripts/reproduce.sh tab2 | tee tab2.log
 ```
 
 Result summary will be generated at `reproduce/tab2/zero_shot_summary.log`.
@@ -87,7 +87,7 @@ Result summary will be generated at `reproduce/tab2/zero_shot_summary.log`.
 #### Figure 7: Normalized layer-level latency on Qwen3 models of different input batch sizes.
 
 ```bash
-bash ./scripts/reproduce.sh fig7
+bash ./scripts/reproduce.sh fig7 | tee fig7.log
 ```
 
 Result figure will be generated at `reproduce/fig7/layer_latency.pdf`.
@@ -95,7 +95,7 @@ Result figure will be generated at `reproduce/fig7/layer_latency.pdf`.
 #### Figure 8: Normalized kernel performance on various matrix shapes.
 
 ```bash
-bash ./scripts/reproduce.sh fig8
+bash ./scripts/reproduce.sh fig8 | tee fig8.log
 ```
 
 Result figure will be generated at `reproduce/fig8/bench_kernels_results.pdf`.
@@ -103,7 +103,7 @@ Result figure will be generated at `reproduce/fig8/bench_kernels_results.pdf`.
 #### Figure 9. Layer-level latency breakdown for Qwen3-8B across different batch sizes with progressive optimizations.
 
 ```bash
-bash ./scripts/reproduce.sh fig9
+bash ./scripts/reproduce.sh fig9 | tee fig9.log
 ```
 
 Result figure will be generated at `reproduce/fig9/plot_breakdown.pdf`.
@@ -111,7 +111,7 @@ Result figure will be generated at `reproduce/fig9/plot_breakdown.pdf`.
 #### Figure 10. Scaling the percentage of outliers.
 
 ```bash
-bash ./scripts/reproduce.sh fig10
+bash ./scripts/reproduce.sh fig10 | tee fig10.log
 ```
 
 Result figure will be generated at `reproduce/fig10/percent-ppl.pdf`.
