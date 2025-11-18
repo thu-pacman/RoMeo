@@ -66,6 +66,8 @@ deactivate
 
 #### Table 1: Comparison of measured perplexity on WikiText2 dataset.
 
+Estimated runtime: ~90 minutes.
+
 ```bash
 bash ./scripts/reproduce.sh tab1 | tee tab1.log
 ```
@@ -73,6 +75,8 @@ bash ./scripts/reproduce.sh tab1 | tee tab1.log
 Result summary will be generated at `reproduce/tab1/perplexity_summary.log`.
 
 #### Table 2: Comparison of zero-shot accuracy on four downstream tasks.
+
+Estimated runtime: ~45 minutes.
 
 ```bash
 bash ./scripts/reproduce.sh tab2 | tee tab2.log
@@ -115,6 +119,8 @@ bash ./scripts/reproduce.sh fig9 | tee fig9.log
 Result figure will be generated at `reproduce/fig9/plot_breakdown.pdf`.
 
 #### Figure 10. Scaling the percentage of outliers.
+
+Estimated runtime: ~50 minutes.
 
 ```bash
 bash ./scripts/reproduce.sh fig10 | tee fig10.log
