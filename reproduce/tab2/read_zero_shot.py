@@ -32,6 +32,8 @@ def extract_task_accuracy(file_path):
                             task_type = 'Quarot'
                         elif 'BitWeaver' in current_task:
                             task_type = 'BitWeaver'
+                        elif 'Int8' in current_task:
+                            task_type = 'INT8'
                         else:
                             task_type = current_task.split('-')[0]
                         
@@ -51,8 +53,7 @@ def analyze_accuracy_results(file_path):
     file_id = file_path.split('_')[1]
     datasets = ['arc_challenge', 'arc_easy', 'lambada_openai', 'piqa', 'winogrande']
     
-    task_order = ['BF16', 'MixQ', 'Quarot', 'BitWeaver']
-    
+    task_order = ['BF16', 'INT8', 'MixQ', 'Quarot', 'BitWeaver']
     for i, task_type in enumerate(task_order):
         if i == 0:
             print(f"{file_id[:-4]}", end='')

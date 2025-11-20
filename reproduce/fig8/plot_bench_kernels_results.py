@@ -30,23 +30,26 @@ ALL_K_N = [
 
 KERNEL_DICT = {
     'BF16': 'baseline_half',
+    'INT8': 'baseline_int8_perchannel',  # INT8放在BF16右边
     'Torch': 'baseline_torch',
     'Quarot': 'baseline_quarot',
     'RoMeo': 'baseline_mixed_precision_multistream',
 }
 
 BAR_COLOR = [
-    "#d6dce5",
-    "#97c6e2",
-    "#9cc97d",
-    "#f3a875",
+    "#d6dce5",  # BF16
+    "#e377c2",  # INT8 - 粉紫色
+    "#97c6e2",  # Torch
+    "#9cc97d",  # Quarot
+    "#f3a875",  # RoMeo
 ]
 
 BAR_HATCH = [
-    "",
-    "oo",
-    "**",
-    "xx",
+    "",     # BF16
+    "++",   # INT8
+    "oo",   # Torch
+    "**",   # Quarot
+    "xx",   # RoMeo
 ]
 
 DATA = None
@@ -70,6 +73,7 @@ def main():
 
     kernels = [
         'BF16',
+        'INT8',  # INT8放在BF16右边
         'Torch',
         'Quarot',
         'RoMeo',
@@ -107,10 +111,10 @@ def main():
     
     # Plotting
 
-    plt.figure(figsize=(7.5, 1.5))
+    plt.figure(figsize=(8.5, 1.5))  # 稍微增加宽度以容纳额外的列
     plt.rcParams.update({'font.size': 8})
 
-    bar_width = 0.22
+    bar_width = 0.18  # 稍微减小条宽以容纳额外的列
     group_spacing = 0.05
 
     x_indices = []

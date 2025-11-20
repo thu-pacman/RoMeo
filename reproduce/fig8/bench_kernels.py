@@ -20,10 +20,16 @@ def benchmark_kernel(
 ) -> float:
     scale_dtype = torch.float16 if 'quarot' in gemm.__name__ else torch.bfloat16
 
-    x = torch.randint(0, 256, (m, k // 2), dtype=torch.uint8, device='cuda')
-    sx = torch.randn(m, dtype=scale_dtype, device='cuda')
-    w = torch.randint(0, 256, (n, k // 2), dtype=torch.uint8, device='cuda')
-    sw = torch.randn(n, dtype=scale_dtype, device='cuda')
+    if 'int8' in gemm.__name__:
+        x = torch.randint(-128, 127, (m, k), dtype=torch.int8, device='cuda')
+        sx = torch.randn(m, dtype=torch.float16, device='cuda')
+        w = torch.randint(-128, 127, (n, k), dtype=torch.int8, device='cuda')
+        sw = torch.randn(n, dtype=torch.float16, device='cuda')
+    else:
+        x = torch.randint(0, 256, (m, k // 2), dtype=torch.uint8, device='cuda')
+        sx = torch.randn(m, dtype=scale_dtype, device='cuda')
+        w = torch.randint(0, 256, (n, k // 2), dtype=torch.uint8, device='cuda')
+        sw = torch.randn(n, dtype=scale_dtype, device='cuda')
 
     if 'half' in gemm.__name__:
         x = torch.randn(m, k, dtype=torch.bfloat16, device='cuda')
@@ -77,6 +83,21 @@ def init_kernels():
         return activation @ weight.T
     
     kernels.append(baseline_half)
+    
+    from qfactory import gemm_int8_int8_nt_perchannel
+    
+    def baseline_int8_perchannel(
+        activation: torch.Tensor,
+        activation_scale: torch.Tensor,
+        weight: torch.Tensor,
+        weight_scale: torch.Tensor,
+        output: torch.Tensor
+    ):
+        out = torch.empty_like(output, dtype=torch.float16)
+        gemm_int8_int8_nt_perchannel(activation, activation_scale, weight, weight_scale, out)
+        return out
+    
+    kernels.append(baseline_int8_perchannel)
 
     from qfactory import gemm_int4_int4_nt_cutlass, gemm_int4_int4_nt_mixed_precision_separate, gemm_int4_int4_nt_mixed_precision
 
