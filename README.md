@@ -10,7 +10,7 @@ The reproduction includes Tables 1 and 2 and Figures 7, 8, 9, and 10 from the su
 
 To reproduce this work, a GPU server with NVIDIA 4090 and H100 GPUs is required.
 
-**For AE Reviewers, please check the HotCRP website for instructions on how to access the provided GPU servers.**
+**For AE Reviewers, please check the HotCRP website comments for instructions on how to access the provided GPU servers.**
 
 To avoid issues of environment and network, we strongly recommend reviewers to use our provided environment.
 
@@ -63,6 +63,29 @@ deactivate
 ```
 
 ## D. Reproduce Experimental Results
+
+> Since the reproductions involve long-running tasks, we strongly recommend running these experiments using `tmux` to ensure that your sessions remain active even if your SSH connection is interrupted.
+>
+> ### Using tmux for Long-running Experiments
+>
+> ```bash
+> # Create a new tmux session with a unique name
+> tmux new-session -s RoMeo-Reviewer-A
+>
+> # Inside tmux, run your experiments as usual
+> bash ./scripts/reproduce.sh tab1 | tee tab1.log
+>
+> # To detach from tmux session without killing the process:
+> # Press Ctrl+b, then d (detach)
+>
+> # To reattach to the session later:
+> tmux attach -t RoMeo-Reviewer-A
+>
+> # To list all tmux sessions:
+> tmux list-sessions
+> ```
+>
+> For more tmux commands and advanced usage, please refer to the tmux manual (`man tmux`) or online documentation.
 
 #### Table 1: Comparison of measured perplexity on WikiText2 dataset.
 
