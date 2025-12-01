@@ -1,0 +1,179 @@
+diff --git a/python/sglang/srt/layers/quantization/__init__.py b/python/sglang/srt/layers/quantization/__init__.py
+index 5693d62..3025151 100644
+--- a/python/sglang/srt/layers/quantization/__init__.py
++++ b/python/sglang/srt/layers/quantization/__init__.py
+@@ -38,6 +38,7 @@ from sglang.srt.layers.quantization.qoq import QoQConfig
+ from sglang.srt.layers.quantization.w4afp8 import W4AFp8Config
+ from sglang.srt.layers.quantization.w8a8_fp8 import W8A8Fp8Config
+ from sglang.srt.layers.quantization.w8a8_int8 import W8A8Int8Config
++from sglang.srt.layers.quantization.romeo import RoMeoConfig
+ from sglang.srt.utils import is_cuda, is_hip, mxfp_supported
+ 
+ _is_mxfp_supported = mxfp_supported()
+@@ -66,6 +67,7 @@ BASE_QUANTIZATION_METHODS: Dict[str, Type[QuantizationConfig]] = {
+     "petit_nvfp4": PetitNvFp4Config,
+     "fbgemm_fp8": FBGEMMFp8Config,
+     "auto-round": AutoRoundConfig,
++    "romeo": RoMeoConfig,
+ }
+ 
+ 
+diff --git a/python/sglang/srt/layers/quantization/romeo.py b/python/sglang/srt/layers/quantization/romeo.py
+new file mode 100644
+index 0000000..80ba8cb
+--- /dev/null
++++ b/python/sglang/srt/layers/quantization/romeo.py
+@@ -0,0 +1,140 @@
++from __future__ import annotations
++
++import torch
++from torch.nn.parameter import Parameter
++
++from types import MappingProxyType
++from typing import Any, Dict, List, Mapping, Optional, cast
++
++from sglang.srt.layers.quantization.base_config import (
++    QuantizationConfig,
++    QuantizeMethodBase,
++    LinearMethodBase,
++)
++from sglang.srt.layers.parameter import (
++    ModelWeightParameter,
++)
++
++import sys
++sys.path += ["/root/shared-nvme/RoMeo-AE/"]
++from qlinear import MixedRQLinear
++
++class RoMeoConfig(QuantizationConfig):
++
++    def __init__(self, quant_config: Dict[str, Any] = {}):
++        super().__init__()
++
++    @classmethod
++    def get_supported_act_dtypes(cls) -> List[torch.dtype]:
++        return (
++            [torch.float16, torch.bfloat16]
++        )
++
++    @classmethod
++    def get_min_capability(cls) -> int:
++        return 80
++
++    @classmethod
++    def get_name(self) -> str:
++        return "romeo"
++
++    @classmethod
++    def get_config_filenames(cls) -> List[str]:
++        filenames = []
++        return filenames
++
++    @classmethod
++    def from_config(cls, config: Dict[str, Any]) -> RoMeoConfig:
++        return cls(config)
++
++    def get_quant_method(
++        self,
++        layer: torch.nn.Module,
++        prefix: str,
++    ) -> Optional[QuantizeMethodBase]:
++        from sglang.srt.layers.linear import LinearBase
++        from sglang.srt.layers.quantization.unquant import UnquantizedLinearMethod
++        from sglang.srt.layers.quantization.compressed_tensors.utils import should_ignore_layer
++
++        if should_ignore_layer(
++            prefix, fused_mapping=self.packed_modules_mapping
++        ):
++            return UnquantizedLinearMethod()
++        if isinstance(layer, LinearBase):
++            return RoMeoLinearMethod(self)
++        return None
++    
++    def get_scaled_act_names(self) -> List[str]:
++        return []
++
++
++class RoMeoLinearMethod(LinearMethodBase):
++
++    def __init__(self, quantization_config: RoMeoConfig):
++        self.quantization_config = quantization_config
++
++    def process_weights_after_loading(self, layer: torch.nn.Module) -> None:
++        import argparse
++        w = layer.weight.clone()
++        _layer = torch.nn.Linear(layer.in_features, layer.out_features, bias=False, device=w.device, dtype=w.dtype)
++        _layer.weight = Parameter(w, requires_grad=False)
++        layer.qlinear = [MixedRQLinear(
++            argparse.Namespace(**{
++                "mixed_precision": "bitweaver",
++                "qfactory_kernel": True,
++                "a_group": None,
++                "w_group": None,
++                "activation_threshold": 0.05,
++                "weight_threshold": 0.05,
++                "threshold_policy": "percentage",
++                "w_clip": False,
++                "rotate": "hadamard",
++                "smooth_quant": False,
++                "rotate_opt": False,
++                "capture_layer_ids": False,
++                "multistream": False,
++                "unifiedkernel": False,
++            }),
++            _layer,
++            "linear",
++            -1,
++            torch.tensor(1, device='cuda'),
++        )] # make it a list to avoid being counted in named_modules
++        del layer.weight
++
++    def create_weights(
++        self,
++        layer: torch.nn.Module,
++        input_size_per_partition: int,
++        output_partition_sizes: List[int],
++        input_size: int,
++        output_size: int,
++        params_dtype: torch.dtype,
++        **extra_weight_attrs,
++    ):
++        weight_loader = extra_weight_attrs.get("weight_loader")
++        self.logical_widths = output_partition_sizes
++
++        weight = ModelWeightParameter(
++            data=torch.empty(
++                sum(output_partition_sizes), input_size_per_partition, dtype=params_dtype
++            ),
++            input_dim=1,
++            output_dim=0,
++            weight_loader=weight_loader,
++        )
++        layer.register_parameter("weight", weight)
++        
++        layer.in_features = input_size_per_partition
++        layer.out_features = sum(output_partition_sizes)
++
++    def apply(
++        self,
++        layer: torch.nn.Module,
++        x: torch.Tensor,
++        bias: Optional[torch.Tensor] = None,
++    ):
++        assert bias is None
++
++        return layer.qlinear[0](x.unsqueeze(0)).squeeze(0)
++    
+\ No newline at end of file
+diff --git a/python/sglang/srt/server_args.py b/python/sglang/srt/server_args.py
+index 681a929..b79f0e1 100644
+--- a/python/sglang/srt/server_args.py
++++ b/python/sglang/srt/server_args.py
+@@ -103,6 +103,7 @@ QUANTIZATION_CHOICES = [
+     "mxfp4",
+     "auto-round",
+     "compressed-tensors",  # for Ktransformers
++    "romeo",
+ ]
+ 
+ ATTENTION_BACKEND_CHOICES = [
