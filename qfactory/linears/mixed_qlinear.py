@@ -152,7 +152,7 @@ class OptMixedQLinear(MixedQLinear):
             output[inp_outlier_idx] = output[-a_outliers:].clone()
             output[:, self.w_idx] = output[:, -self.w_outliers:]
             ret = output[:-a_outliers, :-self.w_outliers]
-        return ret
+        return ret.contiguous()
     
     def act_quantize(self, inp, outliers):
         assert inp.shape[1] % 2 == 0
@@ -184,7 +184,7 @@ class OptMixedQLinear(MixedQLinear):
             output[inp_outlier_idx] = output[-a_outliers:].clone()
             output[:, self.w_idx] = output[:, -self.w_outliers:]
             ret = output[:-a_outliers, :-self.w_outliers]
-        return ret
+        return ret.contiguous()
     
     from ..profile import profile_latency as default_profile_latency
     

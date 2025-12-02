@@ -208,7 +208,7 @@ class JITCompiler:
             return (runtime, config)
         
         all_kernels = []
-        with ThreadPoolExecutor(max_workers=64) as executor:
+        with ThreadPoolExecutor(max_workers=16) as executor:
             futures = [executor.submit(run, config) for config in space]
             for future in as_completed(futures):
                 all_kernels.append(future.result())
