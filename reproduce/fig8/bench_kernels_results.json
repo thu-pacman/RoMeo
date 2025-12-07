@@ -1,0 +1,898 @@
+[
+    {
+        "M": 4096,
+        "N": 6144,
+        "K": 4096,
+        "kernel": "baseline_half",
+        "us": 1450.3610134124756
+    },
+    {
+        "M": 4096,
+        "N": 6144,
+        "K": 4096,
+        "kernel": "baseline_int8_perchannel",
+        "us": 435.99972128868103
+    },
+    {
+        "M": 4096,
+        "N": 6144,
+        "K": 4096,
+        "kernel": "baseline_torch",
+        "us": 633.1909894943237
+    },
+    {
+        "M": 4096,
+        "N": 6144,
+        "K": 4096,
+        "kernel": "baseline_quarot",
+        "us": 426.58472061157227
+    },
+    {
+        "M": 4096,
+        "N": 6144,
+        "K": 4096,
+        "kernel": "gemm_int4_int4_nt_mixed_precision_separate",
+        "us": 381.70966506004333
+    },
+    {
+        "M": 4096,
+        "N": 6144,
+        "K": 4096,
+        "kernel": "baseline_mixed_precision_multistream",
+        "us": 332.97890424728394
+    },
+    {
+        "M": 4096,
+        "N": 6144,
+        "K": 4096,
+        "kernel": "baseline_mixed_precision_unifiedkernel",
+        "us": 404.25509214401245
+    },
+    {
+        "M": 4096,
+        "N": 4096,
+        "K": 4096,
+        "kernel": "baseline_half",
+        "us": 967.3628807067871
+    },
+    {
+        "M": 4096,
+        "N": 4096,
+        "K": 4096,
+        "kernel": "baseline_int8_perchannel",
+        "us": 287.7289056777954
+    },
+    {
+        "M": 4096,
+        "N": 4096,
+        "K": 4096,
+        "kernel": "baseline_torch",
+        "us": 342.15423464775085
+    },
+    {
+        "M": 4096,
+        "N": 4096,
+        "K": 4096,
+        "kernel": "baseline_quarot",
+        "us": 271.0169553756714
+    },
+    {
+        "M": 4096,
+        "N": 4096,
+        "K": 4096,
+        "kernel": "gemm_int4_int4_nt_mixed_precision_separate",
+        "us": 307.95764923095703
+    },
+    {
+        "M": 4096,
+        "N": 4096,
+        "K": 4096,
+        "kernel": "baseline_mixed_precision_multistream",
+        "us": 222.4489152431488
+    },
+    {
+        "M": 4096,
+        "N": 4096,
+        "K": 4096,
+        "kernel": "baseline_mixed_precision_unifiedkernel",
+        "us": 246.0208684206009
+    },
+    {
+        "M": 4096,
+        "N": 24576,
+        "K": 4096,
+        "kernel": "baseline_half",
+        "us": 5745.318412780762
+    },
+    {
+        "M": 4096,
+        "N": 24576,
+        "K": 4096,
+        "kernel": "baseline_int8_perchannel",
+        "us": 1711.4436626434326
+    },
+    {
+        "M": 4096,
+        "N": 24576,
+        "K": 4096,
+        "kernel": "baseline_torch",
+        "us": 2673.527956008911
+    },
+    {
+        "M": 4096,
+        "N": 24576,
+        "K": 4096,
+        "kernel": "baseline_quarot",
+        "us": 1778.926134109497
+    },
+    {
+        "M": 4096,
+        "N": 24576,
+        "K": 4096,
+        "kernel": "gemm_int4_int4_nt_mixed_precision_separate",
+        "us": 1251.3200044631958
+    },
+    {
+        "M": 4096,
+        "N": 24576,
+        "K": 4096,
+        "kernel": "baseline_mixed_precision_multistream",
+        "us": 1178.2360076904297
+    },
+    {
+        "M": 4096,
+        "N": 24576,
+        "K": 4096,
+        "kernel": "baseline_mixed_precision_unifiedkernel",
+        "us": 1315.6934976577759
+    },
+    {
+        "M": 4096,
+        "N": 4096,
+        "K": 12288,
+        "kernel": "baseline_half",
+        "us": 2900.627613067627
+    },
+    {
+        "M": 4096,
+        "N": 4096,
+        "K": 12288,
+        "kernel": "baseline_int8_perchannel",
+        "us": 865.2666807174683
+    },
+    {
+        "M": 4096,
+        "N": 4096,
+        "K": 12288,
+        "kernel": "baseline_torch",
+        "us": 588.190495967865
+    },
+    {
+        "M": 4096,
+        "N": 4096,
+        "K": 12288,
+        "kernel": "baseline_quarot",
+        "us": 516.8231725692749
+    },
+    {
+        "M": 4096,
+        "N": 4096,
+        "K": 12288,
+        "kernel": "gemm_int4_int4_nt_mixed_precision_separate",
+        "us": 871.292233467102
+    },
+    {
+        "M": 4096,
+        "N": 4096,
+        "K": 12288,
+        "kernel": "baseline_mixed_precision_multistream",
+        "us": 678.6286234855652
+    },
+    {
+        "M": 4096,
+        "N": 4096,
+        "K": 12288,
+        "kernel": "baseline_mixed_precision_unifiedkernel",
+        "us": 694.4823265075684
+    },
+    {
+        "M": 4096,
+        "N": 7168,
+        "K": 5120,
+        "kernel": "baseline_half",
+        "us": 2121.8514442443848
+    },
+    {
+        "M": 4096,
+        "N": 7168,
+        "K": 5120,
+        "kernel": "baseline_int8_perchannel",
+        "us": 629.4158697128296
+    },
+    {
+        "M": 4096,
+        "N": 7168,
+        "K": 5120,
+        "kernel": "baseline_torch",
+        "us": 790.1952266693115
+    },
+    {
+        "M": 4096,
+        "N": 7168,
+        "K": 5120,
+        "kernel": "baseline_quarot",
+        "us": 539.3019318580627
+    },
+    {
+        "M": 4096,
+        "N": 7168,
+        "K": 5120,
+        "kernel": "gemm_int4_int4_nt_mixed_precision_separate",
+        "us": 512.7719044685364
+    },
+    {
+        "M": 4096,
+        "N": 7168,
+        "K": 5120,
+        "kernel": "baseline_mixed_precision_multistream",
+        "us": 460.32944321632385
+    },
+    {
+        "M": 4096,
+        "N": 7168,
+        "K": 5120,
+        "kernel": "baseline_mixed_precision_unifiedkernel",
+        "us": 546.5291738510132
+    },
+    {
+        "M": 4096,
+        "N": 5120,
+        "K": 5120,
+        "kernel": "baseline_half",
+        "us": 1521.1963653564453
+    },
+    {
+        "M": 4096,
+        "N": 5120,
+        "K": 5120,
+        "kernel": "baseline_int8_perchannel",
+        "us": 453.9092183113098
+    },
+    {
+        "M": 4096,
+        "N": 5120,
+        "K": 5120,
+        "kernel": "baseline_torch",
+        "us": 550.58354139328
+    },
+    {
+        "M": 4096,
+        "N": 5120,
+        "K": 5120,
+        "kernel": "baseline_quarot",
+        "us": 384.5844864845276
+    },
+    {
+        "M": 4096,
+        "N": 5120,
+        "K": 5120,
+        "kernel": "gemm_int4_int4_nt_mixed_precision_separate",
+        "us": 432.8344464302063
+    },
+    {
+        "M": 4096,
+        "N": 5120,
+        "K": 5120,
+        "kernel": "baseline_mixed_precision_multistream",
+        "us": 348.09428453445435
+    },
+    {
+        "M": 4096,
+        "N": 5120,
+        "K": 5120,
+        "kernel": "baseline_mixed_precision_unifiedkernel",
+        "us": 365.3399348258972
+    },
+    {
+        "M": 4096,
+        "N": 34816,
+        "K": 5120,
+        "kernel": "baseline_half",
+        "us": 10300.023078918457
+    },
+    {
+        "M": 4096,
+        "N": 34816,
+        "K": 5120,
+        "kernel": "baseline_int8_perchannel",
+        "us": 2989.424228668213
+    },
+    {
+        "M": 4096,
+        "N": 34816,
+        "K": 5120,
+        "kernel": "baseline_torch",
+        "us": 3848.1297492980957
+    },
+    {
+        "M": 4096,
+        "N": 34816,
+        "K": 5120,
+        "kernel": "baseline_quarot",
+        "us": 2571.1753368377686
+    },
+    {
+        "M": 4096,
+        "N": 34816,
+        "K": 5120,
+        "kernel": "gemm_int4_int4_nt_mixed_precision_separate",
+        "us": 2176.323413848877
+    },
+    {
+        "M": 4096,
+        "N": 34816,
+        "K": 5120,
+        "kernel": "baseline_mixed_precision_multistream",
+        "us": 2043.365716934204
+    },
+    {
+        "M": 4096,
+        "N": 34816,
+        "K": 5120,
+        "kernel": "baseline_mixed_precision_unifiedkernel",
+        "us": 2257.969379425049
+    },
+    {
+        "M": 4096,
+        "N": 5120,
+        "K": 17408,
+        "kernel": "baseline_half",
+        "us": 5097.596645355225
+    },
+    {
+        "M": 4096,
+        "N": 5120,
+        "K": 17408,
+        "kernel": "baseline_int8_perchannel",
+        "us": 1513.673186302185
+    },
+    {
+        "M": 4096,
+        "N": 5120,
+        "K": 17408,
+        "kernel": "baseline_torch",
+        "us": 993.977427482605
+    },
+    {
+        "M": 4096,
+        "N": 5120,
+        "K": 17408,
+        "kernel": "baseline_quarot",
+        "us": 825.4117965698242
+    },
+    {
+        "M": 4096,
+        "N": 5120,
+        "K": 17408,
+        "kernel": "gemm_int4_int4_nt_mixed_precision_separate",
+        "us": 1348.3206033706665
+    },
+    {
+        "M": 4096,
+        "N": 5120,
+        "K": 17408,
+        "kernel": "baseline_mixed_precision_multistream",
+        "us": 1089.2131328582764
+    },
+    {
+        "M": 4096,
+        "N": 5120,
+        "K": 17408,
+        "kernel": "baseline_mixed_precision_unifiedkernel",
+        "us": 1165.1283502578735
+    },
+    {
+        "M": 4096,
+        "N": 10240,
+        "K": 5120,
+        "kernel": "baseline_half",
+        "us": 3028.956174850464
+    },
+    {
+        "M": 4096,
+        "N": 10240,
+        "K": 5120,
+        "kernel": "baseline_int8_perchannel",
+        "us": 897.5330591201782
+    },
+    {
+        "M": 4096,
+        "N": 10240,
+        "K": 5120,
+        "kernel": "baseline_torch",
+        "us": 1133.0831050872803
+    },
+    {
+        "M": 4096,
+        "N": 10240,
+        "K": 5120,
+        "kernel": "baseline_quarot",
+        "us": 763.5242938995361
+    },
+    {
+        "M": 4096,
+        "N": 10240,
+        "K": 5120,
+        "kernel": "gemm_int4_int4_nt_mixed_precision_separate",
+        "us": 705.2115201950073
+    },
+    {
+        "M": 4096,
+        "N": 10240,
+        "K": 5120,
+        "kernel": "baseline_mixed_precision_multistream",
+        "us": 627.4406313896179
+    },
+    {
+        "M": 4096,
+        "N": 10240,
+        "K": 5120,
+        "kernel": "baseline_mixed_precision_unifiedkernel",
+        "us": 717.8491353988647
+    },
+    {
+        "M": 4096,
+        "N": 5120,
+        "K": 8192,
+        "kernel": "baseline_half",
+        "us": 2409.0402126312256
+    },
+    {
+        "M": 4096,
+        "N": 5120,
+        "K": 8192,
+        "kernel": "baseline_int8_perchannel",
+        "us": 705.4731249809265
+    },
+    {
+        "M": 4096,
+        "N": 5120,
+        "K": 8192,
+        "kernel": "baseline_torch",
+        "us": 671.9804406166077
+    },
+    {
+        "M": 4096,
+        "N": 5120,
+        "K": 8192,
+        "kernel": "baseline_quarot",
+        "us": 498.90008568763733
+    },
+    {
+        "M": 4096,
+        "N": 5120,
+        "K": 8192,
+        "kernel": "gemm_int4_int4_nt_mixed_precision_separate",
+        "us": 666.9042706489563
+    },
+    {
+        "M": 4096,
+        "N": 5120,
+        "K": 8192,
+        "kernel": "baseline_mixed_precision_multistream",
+        "us": 533.0895781517029
+    },
+    {
+        "M": 4096,
+        "N": 5120,
+        "K": 8192,
+        "kernel": "baseline_mixed_precision_unifiedkernel",
+        "us": 568.4863924980164
+    },
+    {
+        "M": 4096,
+        "N": 51200,
+        "K": 5120,
+        "kernel": "baseline_half",
+        "us": 15133.257865905762
+    },
+    {
+        "M": 4096,
+        "N": 51200,
+        "K": 5120,
+        "kernel": "baseline_int8_perchannel",
+        "us": 4395.618438720703
+    },
+    {
+        "M": 4096,
+        "N": 51200,
+        "K": 5120,
+        "kernel": "baseline_torch",
+        "us": 5678.040027618408
+    },
+    {
+        "M": 4096,
+        "N": 51200,
+        "K": 5120,
+        "kernel": "baseline_quarot",
+        "us": 3792.8943634033203
+    },
+    {
+        "M": 4096,
+        "N": 51200,
+        "K": 5120,
+        "kernel": "gemm_int4_int4_nt_mixed_precision_separate",
+        "us": 3094.4907665252686
+    },
+    {
+        "M": 4096,
+        "N": 51200,
+        "K": 5120,
+        "kernel": "baseline_mixed_precision_multistream",
+        "us": 2959.8677158355713
+    },
+    {
+        "M": 4096,
+        "N": 51200,
+        "K": 5120,
+        "kernel": "baseline_mixed_precision_unifiedkernel",
+        "us": 3312.0789527893066
+    },
+    {
+        "M": 4096,
+        "N": 5120,
+        "K": 25600,
+        "kernel": "baseline_half",
+        "us": 7477.327823638916
+    },
+    {
+        "M": 4096,
+        "N": 5120,
+        "K": 25600,
+        "kernel": "baseline_int8_perchannel",
+        "us": 2194.246292114258
+    },
+    {
+        "M": 4096,
+        "N": 5120,
+        "K": 25600,
+        "kernel": "baseline_torch",
+        "us": 1276.024580001831
+    },
+    {
+        "M": 4096,
+        "N": 5120,
+        "K": 25600,
+        "kernel": "baseline_quarot",
+        "us": 1110.402226448059
+    },
+    {
+        "M": 4096,
+        "N": 5120,
+        "K": 25600,
+        "kernel": "gemm_int4_int4_nt_mixed_precision_separate",
+        "us": 1973.548173904419
+    },
+    {
+        "M": 4096,
+        "N": 5120,
+        "K": 25600,
+        "kernel": "baseline_mixed_precision_multistream",
+        "us": 1594.7843790054321
+    },
+    {
+        "M": 4096,
+        "N": 5120,
+        "K": 25600,
+        "kernel": "baseline_mixed_precision_unifiedkernel",
+        "us": 1700.6683349609375
+    },
+    {
+        "M": 4096,
+        "N": 10240,
+        "K": 8192,
+        "kernel": "baseline_half",
+        "us": 4805.069446563721
+    },
+    {
+        "M": 4096,
+        "N": 10240,
+        "K": 8192,
+        "kernel": "baseline_int8_perchannel",
+        "us": 1398.2338905334473
+    },
+    {
+        "M": 4096,
+        "N": 10240,
+        "K": 8192,
+        "kernel": "baseline_torch",
+        "us": 1363.4090423583984
+    },
+    {
+        "M": 4096,
+        "N": 10240,
+        "K": 8192,
+        "kernel": "baseline_quarot",
+        "us": 994.1398501396179
+    },
+    {
+        "M": 4096,
+        "N": 10240,
+        "K": 8192,
+        "kernel": "gemm_int4_int4_nt_mixed_precision_separate",
+        "us": 1095.2199697494507
+    },
+    {
+        "M": 4096,
+        "N": 10240,
+        "K": 8192,
+        "kernel": "baseline_mixed_precision_multistream",
+        "us": 982.8591346740723
+    },
+    {
+        "M": 4096,
+        "N": 10240,
+        "K": 8192,
+        "kernel": "baseline_mixed_precision_unifiedkernel",
+        "us": 1104.9448251724243
+    },
+    {
+        "M": 4096,
+        "N": 8192,
+        "K": 8192,
+        "kernel": "baseline_half",
+        "us": 3849.3175506591797
+    },
+    {
+        "M": 4096,
+        "N": 8192,
+        "K": 8192,
+        "kernel": "baseline_int8_perchannel",
+        "us": 1124.6930360794067
+    },
+    {
+        "M": 4096,
+        "N": 8192,
+        "K": 8192,
+        "kernel": "baseline_torch",
+        "us": 1094.386339187622
+    },
+    {
+        "M": 4096,
+        "N": 8192,
+        "K": 8192,
+        "kernel": "baseline_quarot",
+        "us": 799.5158433914185
+    },
+    {
+        "M": 4096,
+        "N": 8192,
+        "K": 8192,
+        "kernel": "gemm_int4_int4_nt_mixed_precision_separate",
+        "us": 872.3543286323547
+    },
+    {
+        "M": 4096,
+        "N": 8192,
+        "K": 8192,
+        "kernel": "baseline_mixed_precision_multistream",
+        "us": 819.8321461677551
+    },
+    {
+        "M": 4096,
+        "N": 8192,
+        "K": 8192,
+        "kernel": "baseline_mixed_precision_unifiedkernel",
+        "us": 933.3747625350952
+    },
+    {
+        "M": 4096,
+        "N": 57344,
+        "K": 8192,
+        "kernel": "baseline_half",
+        "us": 26807.65724182129
+    },
+    {
+        "M": 4096,
+        "N": 57344,
+        "K": 8192,
+        "kernel": "baseline_int8_perchannel",
+        "us": 7674.056053161621
+    },
+    {
+        "M": 4096,
+        "N": 57344,
+        "K": 8192,
+        "kernel": "baseline_torch",
+        "us": 7682.0807456970215
+    },
+    {
+        "M": 4096,
+        "N": 57344,
+        "K": 8192,
+        "kernel": "baseline_quarot",
+        "us": 5572.366714477539
+    },
+    {
+        "M": 4096,
+        "N": 57344,
+        "K": 8192,
+        "kernel": "gemm_int4_int4_nt_mixed_precision_separate",
+        "us": 5413.56086730957
+    },
+    {
+        "M": 4096,
+        "N": 57344,
+        "K": 8192,
+        "kernel": "baseline_mixed_precision_multistream",
+        "us": 5358.429908752441
+    },
+    {
+        "M": 4096,
+        "N": 57344,
+        "K": 8192,
+        "kernel": "baseline_mixed_precision_unifiedkernel",
+        "us": 5806.026458740234
+    },
+    {
+        "M": 4096,
+        "N": 8192,
+        "K": 28672,
+        "kernel": "baseline_half",
+        "us": 13410.202026367188
+    },
+    {
+        "M": 4096,
+        "N": 8192,
+        "K": 28672,
+        "kernel": "baseline_int8_perchannel",
+        "us": 3987.3077869415283
+    },
+    {
+        "M": 4096,
+        "N": 8192,
+        "K": 28672,
+        "kernel": "baseline_torch",
+        "us": 2254.2779445648193
+    },
+    {
+        "M": 4096,
+        "N": 8192,
+        "K": 28672,
+        "kernel": "baseline_quarot",
+        "us": 1959.893822669983
+    },
+    {
+        "M": 4096,
+        "N": 8192,
+        "K": 28672,
+        "kernel": "gemm_int4_int4_nt_mixed_precision_separate",
+        "us": 2891.394853591919
+    },
+    {
+        "M": 4096,
+        "N": 8192,
+        "K": 28672,
+        "kernel": "baseline_mixed_precision_multistream",
+        "us": 2864.9911880493164
+    },
+    {
+        "M": 4096,
+        "N": 8192,
+        "K": 28672,
+        "kernel": "baseline_mixed_precision_unifiedkernel",
+        "us": 3172.8971004486084
+    },
+    {
+        "M": 4096,
+        "N": 6144,
+        "K": 4096,
+        "kernel": "baseline_atom",
+        "us": 352.546
+    },
+    {
+        "M": 4096,
+        "N": 4096,
+        "K": 4096,
+        "kernel": "baseline_atom",
+        "us": 239.737
+    },
+    {
+        "M": 4096,
+        "N": 24576,
+        "K": 4096,
+        "kernel": "baseline_atom",
+        "us": 1423
+    },
+    {
+        "M": 4096,
+        "N": 4096,
+        "K": 12288,
+        "kernel": "baseline_atom",
+        "us": 633.337
+    },
+    {
+        "M": 4096,
+        "N": 7168,
+        "K": 5120,
+        "kernel": "baseline_atom",
+        "us": 499.683
+    },
+    {
+        "M": 4096,
+        "N": 5120,
+        "K": 5120,
+        "kernel": "baseline_atom",
+        "us": 357.112
+    },
+    {
+        "M": 4096,
+        "N": 34816,
+        "K": 5120,
+        "kernel": "baseline_atom",
+        "us": 5432
+    },
+    {
+        "M": 4096,
+        "N": 5120,
+        "K": 17408,
+        "kernel": "baseline_atom",
+        "us": 1104
+    },
+    {
+        "M": 4096,
+        "N": 10240,
+        "K": 5120,
+        "kernel": "baseline_atom",
+        "us": 720.204
+    },
+    {
+        "M": 4096,
+        "N": 5120,
+        "K": 8192,
+        "kernel": "baseline_atom",
+        "us": 538.131
+    },
+    {
+        "M": 4096,
+        "N": 51200,
+        "K": 5120,
+        "kernel": "baseline_atom",
+        "us": 8083
+    },
+    {
+        "M": 4096,
+        "N": 5120,
+        "K": 25600,
+        "kernel": "baseline_atom",
+        "us": 1623
+    },
+    {
+        "M": 4096,
+        "N": 10240,
+        "K": 8192,
+        "kernel": "baseline_atom",
+        "us": 1100
+    },
+    {
+        "M": 4096,
+        "N": 8192,
+        "K": 8192,
+        "kernel": "baseline_atom",
+        "us": 871.371
+    },
+    {
+        "M": 4096,
+        "N": 57344,
+        "K": 8192,
+        "kernel": "baseline_atom",
+        "us": 14354
+    },
+    {
+        "M": 4096,
+        "N": 8192,
+        "K": 28672,
+        "kernel": "baseline_atom",
+        "us": 4182
+    }
+]

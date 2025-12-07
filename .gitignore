@@ -4,3 +4,4 @@ __pycache__/
 *.egg-info*
 *.pdf
 build/
+!reproduce/fig8/bench_kernels_results.json
