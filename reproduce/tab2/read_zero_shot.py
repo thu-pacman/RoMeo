@@ -22,7 +22,7 @@ def extract_task_accuracy(file_path):
                     
                     for key, value in matches:
                         accuracy_dict[key] = float(value)
-                    
+
                     if accuracy_dict:
                         if 'BF16' in current_task:
                             task_type = 'BF16'
@@ -34,7 +34,7 @@ def extract_task_accuracy(file_path):
                             task_type = 'BitWeaver'
                         else:
                             task_type = current_task.split('-')[0]
-                        
+
                         results[task_type] = accuracy_dict
                         current_task = None
     
@@ -49,9 +49,9 @@ def analyze_accuracy_results(file_path):
     results = extract_task_accuracy(file_path)
     
     file_id = file_path.split('_')[1]
-    datasets = ['arc_challenge', 'arc_easy', 'lambada_openai', 'piqa', 'winogrande']
+    datasets = ['arc_challenge', 'arc_easy', 'hellaswag', 'lambada_openai', 'piqa', 'winogrande']
     
-    task_order = ['BF16', 'MixQ', 'Quarot', 'BitWeaver']
+    task_order = ['BF16', 'MixQ', 'Quarot', 'BitWeaver', 'INT4']
     
     for i, task_type in enumerate(task_order):
         if i == 0:
@@ -87,7 +87,7 @@ def main():
     
     file_paths = args.file_path.split(",")
     
-    datasets = ['ARC-C', 'ARC-E', 'LAMBADA', 'PIQA', 'WG', 'Average']
+    datasets = ['ARC-C', 'ARC-E', 'HS', 'LAMBADA', 'PIQA', 'WG', 'Average']
     
     print('=' * 100)
     print("Table2. Comparison of zero-shot accuracy on five downstream tasks. The higher is better.")
