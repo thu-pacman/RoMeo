@@ -1,0 +1,288 @@
+diff --git a/.gitmodules b/.gitmodules
+index 5aad6b1..979e1ed 100644
+--- a/.gitmodules
++++ b/.gitmodules
+@@ -1,9 +1,9 @@
+ [submodule "kernels/3rdparty/nvbench"]
+ 	path = kernels/3rdparty/nvbench
+-	url = https://github.com/NVIDIA/nvbench.git
++	url = git@github.com:NVIDIA/nvbench.git
+ [submodule "kernels/3rdparty/torch-int"]
+ 	path = kernels/3rdparty/torch-int
+-	url = https://github.com/Guangxuan-Xiao/torch-int.git
++	url = git@github.com:Guangxuan-Xiao/torch-int.git
+ [submodule "kernels/3rdparty/llm-awq"]
+ 	path = kernels/3rdparty/llm-awq
+-	url = https://github.com/mit-han-lab/llm-awq.git
++	url = git@github.com:mit-han-lab/llm-awq.git
+diff --git a/bench_kernel_output.txt b/bench_kernel_output.txt
+new file mode 100644
+index 0000000..fb5b9fe
+--- /dev/null
++++ b/bench_kernel_output.txt
+@@ -0,0 +1,181 @@
++# Devices
++
++## [0] `NVIDIA GeForce RTX 4090`
++* SM Version: 890 (PTX Version: 860)
++* Number of SMs: 128
++* SM Default Clock Rate: 18446744071934 MHz
++* Global Memory: 23698 MiB Free / 24091 MiB Total
++* Global Memory Bus Peak: 1008 GB/sec (384-bit DDR @10501MHz)
++* Max Shared Memory: 100 KiB/SM, 48 KiB/Block
++* L2 Cache Size: 73728 KiB
++* Maximum Active Blocks: 24/SM
++* Maximum Active Threads: 1536/SM, 1024/Block
++* Available Registers: 65536/SM, 65536/Block
++* ECC Enabled: No
++
++# Log
++
++```
++Run:  [1/16] Dense_layer_gemm_i4_o16_4096_6144 [Device=0 bsz=4096 keeper_size=128 hidden_dim=4096 out_dim=6144]
++Pass: Cold: 0.352546ms GPU, 0.358178ms CPU, 0.50s total GPU, 0.62s total wall, 1419x 
++Run:  [2/16] Dense_layer_gemm_i4_o16_4096_4096 [Device=0 bsz=4096 keeper_size=128 hidden_dim=4096 out_dim=4096]
++Pass: Cold: 0.239737ms GPU, 0.245475ms CPU, 0.50s total GPU, 0.69s total wall, 2086x 
++Run:  [3/16] Dense_layer_gemm_i4_o16_4096_24576 [Device=0 bsz=4096 keeper_size=128 hidden_dim=4096 out_dim=24576]
++Pass: Cold: 1.422595ms GPU, 1.428432ms CPU, 0.50s total GPU, 0.53s total wall, 352x 
++Run:  [4/16] Dense_layer_gemm_i4_o16_12288_4096 [Device=0 bsz=4096 keeper_size=128 hidden_dim=12288 out_dim=4096]
++Pass: Cold: 0.633337ms GPU, 0.638968ms CPU, 0.50s total GPU, 0.56s total wall, 790x 
++Run:  [5/16] Dense_layer_gemm_i4_o16_5120_7168 [Device=0 bsz=4096 keeper_size=128 hidden_dim=5120 out_dim=7168]
++Pass: Cold: 0.499683ms GPU, 0.505692ms CPU, 0.50s total GPU, 0.59s total wall, 1001x 
++Run:  [6/16] Dense_layer_gemm_i4_o16_5120_5120 [Device=0 bsz=4096 keeper_size=128 hidden_dim=5120 out_dim=5120]
++Pass: Cold: 0.357112ms GPU, 0.362938ms CPU, 0.50s total GPU, 0.63s total wall, 1401x 
++Run:  [7/16] Dense_layer_gemm_i4_o16_5120_34816 [Device=0 bsz=4096 keeper_size=128 hidden_dim=5120 out_dim=34816]
++Pass: Cold: 5.432448ms GPU, 5.438799ms CPU, 0.51s total GPU, 0.51s total wall, 93x 
++Run:  [8/16] Dense_layer_gemm_i4_o16_17408_5120 [Device=0 bsz=4096 keeper_size=128 hidden_dim=17408 out_dim=5120]
++Pass: Cold: 1.104212ms GPU, 1.110455ms CPU, 0.50s total GPU, 0.53s total wall, 453x 
++Run:  [9/16] Dense_layer_gemm_i4_o16_5120_10240 [Device=0 bsz=4096 keeper_size=128 hidden_dim=5120 out_dim=10240]
++Pass: Cold: 0.720204ms GPU, 0.726418ms CPU, 0.50s total GPU, 0.57s total wall, 695x 
++Run:  [10/16] Dense_layer_gemm_i4_o16_8192_5120 [Device=0 bsz=4096 keeper_size=128 hidden_dim=8192 out_dim=5120]
++Pass: Cold: 0.538131ms GPU, 0.544441ms CPU, 0.50s total GPU, 0.59s total wall, 930x 
++Run:  [11/16] Dense_layer_gemm_i4_o16_5120_51200 [Device=0 bsz=4096 keeper_size=128 hidden_dim=5120 out_dim=51200]
++Pass: Cold: 8.082552ms GPU, 8.088830ms CPU, 0.50s total GPU, 0.51s total wall, 62x 
++Run:  [12/16] Dense_layer_gemm_i4_o16_25600_5120 [Device=0 bsz=4096 keeper_size=128 hidden_dim=25600 out_dim=5120]
++Pass: Cold: 1.622892ms GPU, 1.629118ms CPU, 0.50s total GPU, 0.52s total wall, 309x 
++Run:  [13/16] Dense_layer_gemm_i4_o16_8192_10240 [Device=0 bsz=4096 keeper_size=128 hidden_dim=8192 out_dim=10240]
++Pass: Cold: 1.099850ms GPU, 1.106064ms CPU, 0.50s total GPU, 0.54s total wall, 455x 
++Run:  [14/16] Dense_layer_gemm_i4_o16_8192_8192 [Device=0 bsz=4096 keeper_size=128 hidden_dim=8192 out_dim=8192]
++Pass: Cold: 0.871371ms GPU, 0.877646ms CPU, 0.50s total GPU, 0.55s total wall, 574x 
++Run:  [15/16] Dense_layer_gemm_i4_o16_8192_57344 [Device=0 bsz=4096 keeper_size=128 hidden_dim=8192 out_dim=57344]
++Pass: Cold: 14.354207ms GPU, 14.360554ms CPU, 0.50s total GPU, 0.50s total wall, 35x 
++Run:  [16/16] Dense_layer_gemm_i4_o16_28672_8192 [Device=0 bsz=4096 keeper_size=128 hidden_dim=28672 out_dim=8192]
++Pass: Cold: 4.181942ms GPU, 4.188159ms CPU, 0.50s total GPU, 0.51s total wall, 120x 
++```
++
++# Benchmark Results
++
++## Dense_layer_gemm_i4_o16_4096_6144
++
++### [0] NVIDIA GeForce RTX 4090
++
++| bsz  | keeper_size | hidden_dim | out_dim |    Read    |   Write    | Samples |  CPU Time  | Noise |  GPU Time  | Noise |  Elem/s  | GlobalMem BW | BWUtil |
++|------|-------------|------------|---------|------------|------------|---------|------------|-------|------------|-------|----------|--------------|--------|
++| 4096 |         128 |       4096 |    6144 | 20.625 MiB | 48.000 MiB |   1419x | 358.178 us | 1.62% | 352.546 us | 0.28% | 584.770T | 208.201 GB/s | 20.65% |
++
++## Dense_layer_gemm_i4_o16_4096_4096
++
++### [0] NVIDIA GeForce RTX 4090
++
++| bsz  | keeper_size | hidden_dim | out_dim |    Read    |   Write    | Samples |  CPU Time  | Noise |  GPU Time  | Noise |  Elem/s  | GlobalMem BW | BWUtil |
++|------|-------------|------------|---------|------------|------------|---------|------------|-------|------------|-------|----------|--------------|--------|
++| 4096 |         128 |       4096 |    4096 | 16.500 MiB | 32.000 MiB |   2086x | 245.475 us | 3.69% | 239.737 us | 0.40% | 573.291T | 217.600 GB/s | 21.59% |
++
++## Dense_layer_gemm_i4_o16_4096_24576
++
++### [0] NVIDIA GeForce RTX 4090
++
++| bsz  | keeper_size | hidden_dim | out_dim |    Read    |    Write    | Samples | CPU Time | Noise | GPU Time | Noise |  Elem/s  | GlobalMem BW | BWUtil |
++|------|-------------|------------|---------|------------|-------------|---------|----------|-------|----------|-------|----------|--------------|--------|
++| 4096 |         128 |       4096 |   24576 | 57.750 MiB | 192.000 MiB |    352x | 1.428 ms | 0.43% | 1.423 ms | 0.12% | 579.669T | 185.930 GB/s | 18.44% |
++
++## Dense_layer_gemm_i4_o16_12288_4096
++
++### [0] NVIDIA GeForce RTX 4090
++
++| bsz  | keeper_size | hidden_dim | out_dim |    Read    |   Write    | Samples |  CPU Time  | Noise |  GPU Time  | Noise |  Elem/s  | GlobalMem BW | BWUtil |
++|------|-------------|------------|---------|------------|------------|---------|------------|-------|------------|-------|----------|--------------|--------|
++| 4096 |         128 |      12288 |    4096 | 48.500 MiB | 32.000 MiB |    790x | 638.968 us | 0.91% | 633.337 us | 0.16% | 651.023T | 139.487 GB/s | 13.84% |
++
++## Dense_layer_gemm_i4_o16_5120_7168
++
++### [0] NVIDIA GeForce RTX 4090
++
++| bsz  | keeper_size | hidden_dim | out_dim |    Read    |   Write    | Samples |  CPU Time  | Noise |  GPU Time  | Noise |  Elem/s  | GlobalMem BW | BWUtil |
++|------|-------------|------------|---------|------------|------------|---------|------------|-------|------------|-------|----------|--------------|--------|
++| 4096 |         128 |       5120 |    7168 | 28.188 MiB | 56.000 MiB |   1001x | 505.692 us | 1.22% | 499.683 us | 0.20% | 601.676T | 180.437 GB/s | 17.90% |
++
++## Dense_layer_gemm_i4_o16_5120_5120
++
++### [0] NVIDIA GeForce RTX 4090
++
++| bsz  | keeper_size | hidden_dim | out_dim |    Read    |   Write    | Samples |  CPU Time  | Noise |  GPU Time  | Noise |  Elem/s  | GlobalMem BW | BWUtil |
++|------|-------------|------------|---------|------------|------------|---------|------------|-------|------------|-------|----------|--------------|--------|
++| 4096 |         128 |       5120 |    5120 | 23.062 MiB | 40.000 MiB |   1401x | 362.938 us | 1.68% | 357.112 us | 0.30% | 601.347T | 189.985 GB/s | 18.85% |
++
++## Dense_layer_gemm_i4_o16_5120_34816
++
++### [0] NVIDIA GeForce RTX 4090
++
++| bsz  | keeper_size | hidden_dim | out_dim |    Read    |    Write    | Samples | CPU Time | Noise | GPU Time | Noise |  Elem/s  | GlobalMem BW | BWUtil |
++|------|-------------|------------|---------|------------|-------------|---------|----------|-------|----------|-------|----------|--------------|--------|
++| 4096 |         128 |       5120 |   34816 | 97.375 MiB | 272.000 MiB |     93x | 5.439 ms | 0.28% | 5.432 ms | 0.25% | 268.809T |  72.051 GB/s |  7.15% |
++
++## Dense_layer_gemm_i4_o16_17408_5120
++
++### [0] NVIDIA GeForce RTX 4090
++
++| bsz  | keeper_size | hidden_dim | out_dim |    Read    |   Write    | Samples | CPU Time | Noise | GPU Time | Noise |  Elem/s  | GlobalMem BW | BWUtil |
++|------|-------------|------------|---------|------------|------------|---------|----------|-------|----------|-------|----------|--------------|--------|
++| 4096 |         128 |      17408 |    5120 | 77.062 MiB | 40.000 MiB |    453x | 1.110 ms | 0.58% | 1.104 ms | 0.12% | 661.236T | 116.461 GB/s | 11.55% |
++
++## Dense_layer_gemm_i4_o16_5120_10240
++
++### [0] NVIDIA GeForce RTX 4090
++
++| bsz  | keeper_size | hidden_dim | out_dim |    Read    |   Write    | Samples |  CPU Time  | Noise |  GPU Time  | Noise |  Elem/s  | GlobalMem BW | BWUtil |
++|------|-------------|------------|---------|------------|------------|---------|------------|-------|------------|-------|----------|--------------|--------|
++| 4096 |         128 |       5120 |   10240 | 35.875 MiB | 80.000 MiB |    695x | 726.418 us | 0.88% | 720.204 us | 0.15% | 596.354T | 171.665 GB/s | 17.03% |
++
++## Dense_layer_gemm_i4_o16_8192_5120
++
++### [0] NVIDIA GeForce RTX 4090
++
++| bsz  | keeper_size | hidden_dim | out_dim |    Read    |   Write    | Samples |  CPU Time  | Noise |  GPU Time  | Noise |  Elem/s  | GlobalMem BW | BWUtil |
++|------|-------------|------------|---------|------------|------------|---------|------------|-------|------------|-------|----------|--------------|--------|
++| 4096 |         128 |       8192 |    5120 | 36.562 MiB | 40.000 MiB |    930x | 544.441 us | 1.23% | 538.131 us | 0.21% | 638.502T | 154.301 GB/s | 15.31% |
++
++## Dense_layer_gemm_i4_o16_5120_51200
++
++### [0] NVIDIA GeForce RTX 4090
++
++| bsz  | keeper_size | hidden_dim | out_dim |    Read     |    Write    | Samples | CPU Time | Noise | GPU Time | Noise |  Elem/s  | GlobalMem BW | BWUtil |
++|------|-------------|------------|---------|-------------|-------------|---------|----------|-------|----------|-------|----------|--------------|--------|
++| 4096 |         128 |       5120 |   51200 | 138.375 MiB | 400.000 MiB |     62x | 8.089 ms | 0.23% | 8.083 ms | 0.22% | 265.694T |  70.514 GB/s |  6.99% |
++
++## Dense_layer_gemm_i4_o16_25600_5120
++
++### [0] NVIDIA GeForce RTX 4090
++
++| bsz  | keeper_size | hidden_dim | out_dim |    Read     |   Write    | Samples | CPU Time | Noise | GPU Time | Noise |  Elem/s  | GlobalMem BW | BWUtil |
++|------|-------------|------------|---------|-------------|------------|---------|----------|-------|----------|-------|----------|--------------|--------|
++| 4096 |         128 |      25600 |    5120 | 113.062 MiB | 40.000 MiB |    309x | 1.629 ms | 0.41% | 1.623 ms | 0.13% | 661.623T | 104.196 GB/s | 10.34% |
++
++## Dense_layer_gemm_i4_o16_8192_10240
++
++### [0] NVIDIA GeForce RTX 4090
++
++| bsz  | keeper_size | hidden_dim | out_dim |    Read    |   Write    | Samples | CPU Time | Noise | GPU Time | Noise |  Elem/s  | GlobalMem BW | BWUtil |
++|------|-------------|------------|---------|------------|------------|---------|----------|-------|----------|-------|----------|--------------|--------|
++| 4096 |         128 |       8192 |   10240 | 56.875 MiB | 80.000 MiB |    455x | 1.106 ms | 0.59% | 1.100 ms | 0.16% | 624.808T | 133.593 GB/s | 13.25% |
++
++## Dense_layer_gemm_i4_o16_8192_8192
++
++### [0] NVIDIA GeForce RTX 4090
++
++| bsz  | keeper_size | hidden_dim | out_dim |    Read    |   Write    | Samples |  CPU Time  | Noise |  GPU Time  | Noise |  Elem/s  | GlobalMem BW | BWUtil |
++|------|-------------|------------|---------|------------|------------|---------|------------|-------|------------|-------|----------|--------------|--------|
++| 4096 |         128 |       8192 |    8192 | 48.750 MiB | 64.000 MiB |    574x | 877.646 us | 0.75% | 871.371 us | 0.21% | 630.909T | 139.289 GB/s | 13.82% |
++
++## Dense_layer_gemm_i4_o16_8192_57344
++
++### [0] NVIDIA GeForce RTX 4090
++
++| bsz  | keeper_size | hidden_dim | out_dim |    Read     |    Write    | Samples | CPU Time  | Noise | GPU Time  | Noise |  Elem/s  | GlobalMem BW | BWUtil |
++|------|-------------|------------|---------|-------------|-------------|---------|-----------|-------|-----------|-------|----------|--------------|--------|
++| 4096 |         128 |       8192 |   57344 | 243.750 MiB | 448.000 MiB |     35x | 14.361 ms | 0.43% | 14.354 ms | 0.43% | 268.095T |  51.190 GB/s |  5.08% |
++
++## Dense_layer_gemm_i4_o16_28672_8192
++
++### [0] NVIDIA GeForce RTX 4090
++
++| bsz  | keeper_size | hidden_dim | out_dim |    Read     |   Write    | Samples | CPU Time | Noise | GPU Time | Noise |  Elem/s  | GlobalMem BW | BWUtil |
++|------|-------------|------------|---------|-------------|------------|---------|----------|-------|----------|-------|----------|--------------|--------|
++| 4096 |         128 |      28672 |    8192 | 168.750 MiB | 64.000 MiB |    120x | 4.188 ms | 0.24% | 4.182 ms | 0.18% | 460.108T |  60.992 GB/s |  6.05% |
+diff --git a/kernels/CMakeLists.txt b/kernels/CMakeLists.txt
+index 5c50e14..5563892 100644
+--- a/kernels/CMakeLists.txt
++++ b/kernels/CMakeLists.txt
+@@ -1,6 +1,6 @@
+ cmake_minimum_required(VERSION 3.18)
+-set(CMAKE_C_COMPILER "/usr/bin/gcc-11")
+-set(CMAKE_CXX_COMPILER "/usr/bin/g++-11")
++# set(CMAKE_C_COMPILER "/usr/bin/gcc-11")
++# set(CMAKE_CXX_COMPILER "/usr/bin/g++-11")
+ 
+ project(atom CUDA CXX)
+ set(CMAKE_CXX_STANDARD 17)
+@@ -47,4 +47,4 @@ add_executable(bench_batch_decode ${PROJECT_SOURCE_DIR}/src/flashinfer/bench_bat
+ target_include_directories(bench_batch_decode PRIVATE ${ATOM_INCLUDE_DIR})
+ target_include_directories(bench_batch_decode PRIVATE ${PROJECT_SOURCE_DIR}/3rdparty/nvbench)
+ target_compile_options(bench_batch_decode PRIVATE $<$<COMPILE_LANGUAGE:CUDA>:-maxrregcount=255 -gencode arch=compute_86,code=sm_86 -w>) 
+-target_link_libraries(bench_batch_decode PRIVATE nvbench::main)
+\ No newline at end of file
++target_link_libraries(bench_batch_decode PRIVATE nvbench::main)
+diff --git a/kernels/src/GEMM/bench_dense_layer_gemm_i4_o16.cu b/kernels/src/GEMM/bench_dense_layer_gemm_i4_o16.cu
+index f8f0acf..2ab6245 100644
+--- a/kernels/src/GEMM/bench_dense_layer_gemm_i4_o16.cu
++++ b/kernels/src/GEMM/bench_dense_layer_gemm_i4_o16.cu
+@@ -6,10 +6,11 @@ void bench_DenseLayerGEMM_i4(nvbench::state &state) {
+   size_t bsz = state.get_int64("bsz");
+   size_t keeper_size = state.get_int64("keeper_size");
+   size_t hidden_dim = state.get_int64("hidden_dim");
++  size_t out_dim = state.get_int64("out_dim");
+ 
+   size_t TEST_M_GLOBAL = bsz;
+   size_t TEST_K_GLOBAL = hidden_dim - keeper_size;
+-  size_t TEST_N_GLOBAL = hidden_dim;
++  size_t TEST_N_GLOBAL = out_dim;
+ 
+   // Allocate input data:
+   thrust::device_vector<uint8_t> A(TEST_M_GLOBAL * TEST_K_GLOBAL / 2);
+@@ -61,9 +62,39 @@ void bench_DenseLayerGEMM_i4(nvbench::state &state) {
+   });
+ }
+ 
+-NVBENCH_BENCH(                                                                   
+-    bench_DenseLayerGEMM_i4
+-).set_name("Dense_layer_gemm_i4_o16")                       
+-.add_int64_axis("bsz", {16,32,64,128,256,512,1024,2048,4096})
+-.add_int64_axis("keeper_size", {128})
+-.add_int64_axis("hidden_dim", {4096});
+\ No newline at end of file
++// NVBENCH_BENCH(                                                                   
++//     bench_DenseLayerGEMM_i4
++// ).set_name("Dense_layer_gemm_i4_o16")                       
++// .add_int64_axis("bsz", {16,32,64,128,256,512,1024,2048,4096})
++// .add_int64_axis("keeper_size", {128})
++// .add_int64_axis("hidden_dim", {4096});
++
++#define TEST_K_N(k, n) \
++  NVBENCH_BENCH(                                   \
++      bench_DenseLayerGEMM_i4                      \
++  ).set_name("Dense_layer_gemm_i4_o16_" #k "_" #n) \
++  .add_int64_axis("bsz", {4096})                   \
++  .add_int64_axis("keeper_size", {128})            \
++  .add_int64_axis("hidden_dim", {k})               \
++  .add_int64_axis("out_dim", {n});
++
++// Qwen3-8B
++TEST_K_N(4096, 6144); // qkv
++TEST_K_N(4096, 4096); // o
++TEST_K_N(4096, 24576); // ug
++TEST_K_N(12288, 4096); // d
++// Qwen3-14B
++TEST_K_N(5120, 7168); // qkv
++TEST_K_N(5120, 5120); // o
++TEST_K_N(5120, 34816); // ug
++TEST_K_N(17408, 5120); // d
++// Qwen3-32B
++TEST_K_N(5120, 10240); // qkv
++TEST_K_N(8192, 5120); // o
++TEST_K_N(5120, 51200); // ug
++TEST_K_N(25600, 5120); // d
++// Llama-3.1-70B
++TEST_K_N(8192, 10240); // qkv
++TEST_K_N(8192, 8192); // o
++TEST_K_N(8192, 57344); // ug
++TEST_K_N(28672, 8192); // d
