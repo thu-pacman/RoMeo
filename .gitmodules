@@ -10,3 +10,6 @@
 [submodule "third_party/applied-ai"]
 	path = third_party/applied-ai
 	url = https://github.com/meta-pytorch/applied-ai.git
+[submodule "third_party/Atom"]
+	path = third_party/Atom
+	url = https://github.com/efeslab/Atom.git
