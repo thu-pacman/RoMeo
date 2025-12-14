@@ -1,0 +1,10 @@
+model,bit,wiki2,ptb,c4,ptb-new,c4-new
+/mnt/bos-text/zhangqihao3/models/Qwen3-8B,4,19.044,,,,
+model,bit,wiki2,ptb,c4,ptb-new,c4-new
+/mnt/bos-text/zhangqihao3/models/Qwen3-14B,4,10.680,,,,
+model,bit,wiki2,ptb,c4,ptb-new,c4-new
+/mnt/bos-text/zhangqihao3/models/Qwen3-32B,4,9.777,,,,
+model,bit,wiki2,ptb,c4,ptb-new,c4-new
+/mnt/bos-text/zhangqihao3/models/Llama-3.1-8B,4,7.620,,,,
+model,bit,wiki2,ptb,c4,ptb-new,c4-new
+/mnt/bos-text/zhangqihao3/models/Llama-3.1-70B,4,4.254,,,,

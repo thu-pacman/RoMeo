@@ -1,0 +1,10 @@
+model,bit,arc_challenge,arc_easy,hellaswag,lambada_openai,piqa,winogrande
+/mnt/bos-text/zhangqihao3/models/Qwen3-8B,4, 47.18, 73.65, 63.44, 41.41, 72.25, 61.56
+model,bit,arc_challenge,arc_easy,hellaswag,lambada_openai,piqa,winogrande
+/mnt/bos-text/zhangqihao3/models/Qwen3-14B,4, 51.79, 73.23, 74.02, 62.47, 76.93, 68.90
+model,bit,arc_challenge,arc_easy,hellaswag,lambada_openai,piqa,winogrande
+/mnt/bos-text/zhangqihao3/models/Qwen3-32B,4, 22.70, 25.08, 78.81, 64.56, 49.51, 68.90
+model,bit,arc_challenge,arc_easy,hellaswag,lambada_openai,piqa,winogrande
+/mnt/bos-text/zhangqihao3/models/Llama-3.1-8B,4, 49.06, 74.62, 74.62, 70.27, 78.29, 70.72
+model,bit,arc_challenge,arc_easy,hellaswag,lambada_openai,piqa,winogrande
+/mnt/bos-text/zhangqihao3/models/Llama-3.1-70B,4, 60.92, 84.51, 83.04, 78.07, 83.03, 77.74
