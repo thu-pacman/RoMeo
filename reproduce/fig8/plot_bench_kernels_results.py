@@ -38,21 +38,19 @@ KERNEL_DICT = {
 }
 
 BAR_COLOR = [
-    "#d6dce5",  # BF16
-    "#e377c2",  # INT8 - 粉紫色
-    "#d6d680",  # Atom
-    # "#97c6e2",  # Torch
-    "#9cc97d",  # Quarot
-    "#f3a875",  # RoMeo
+    "#d9d9d9",  # BF16: 浅灰
+    "#8da0cb",  # INT8: 柔和蓝紫
+    "#66c2a5",  # Atom: 柔和青绿
+    "#92b854",  # Quarot: 柔和嫩绿
+    "#fc8d62",  # RoMeo: 柔和橙红
 ]
 
 BAR_HATCH = [
-    "",     # BF16
-    "++",   # INT8
-    "..",   # Atom
-    # "oo",   # Torch
-    "**",   # Quarot
-    "xx",   # RoMeo
+    "",        # BF16 (无纹理，干净)
+    "...",     # INT8 (点状)
+    "///",     # Atom (斜线，简单)
+    "\\\\\\",  # Quarot (反向斜线)
+    "xxx",     # RoMeo
 ]
 
 DATA = None
