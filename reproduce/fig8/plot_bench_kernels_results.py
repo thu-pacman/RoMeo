@@ -1,9 +1,13 @@
 import argparse
 import json
+import matplotlib
 import matplotlib.pyplot as plt
 import numpy as np
 from scipy.stats import gmean
 from functools import partial
+
+matplotlib.rcParams['pdf.fonttype'] = 42
+matplotlib.rcParams['ps.fonttype'] = 42
 
 ALL_K_N = [
     # Qwen3-8B

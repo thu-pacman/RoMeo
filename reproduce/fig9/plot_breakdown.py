@@ -1,9 +1,12 @@
 from functools import partial
+import matplotlib
 import matplotlib.pyplot as plt
 import numpy as np
 import re
 import argparse
 
+matplotlib.rcParams['pdf.fonttype'] = 42
+matplotlib.rcParams['ps.fonttype'] = 42
 
 def read_data_from_file(filename):
     data = []

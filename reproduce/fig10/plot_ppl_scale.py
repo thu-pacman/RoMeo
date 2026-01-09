@@ -1,6 +1,10 @@
+import matplotlib
 import matplotlib.pyplot as plt
 import numpy as np
 import re
+
+matplotlib.rcParams['pdf.fonttype'] = 42
+matplotlib.rcParams['ps.fonttype'] = 42
 
 def extract_baseline_ppl(file_path):
     with open(file_path, 'r') as f:

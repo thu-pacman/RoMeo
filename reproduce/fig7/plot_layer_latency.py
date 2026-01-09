@@ -1,6 +1,10 @@
 import numpy as np
+import matplotlib
 import matplotlib.pyplot as plt
 import re
+
+matplotlib.rcParams['pdf.fonttype'] = 42
+matplotlib.rcParams['ps.fonttype'] = 42
 
 models = ['Qwen3-8B', 'Qwen3-14B', 'Qwen3-32B']
 batch_sizes = [16, 64, 256]
